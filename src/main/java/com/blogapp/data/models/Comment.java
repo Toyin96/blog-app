@@ -1,20 +1,34 @@
 package com.blogapp.data.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.time.LocalDate;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+
+import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
+@Data
+@NoArgsConstructor
 public class Comment {
 
     @Id
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "BINARY(16)")
+    private UUID id;
 
     private String commentatorName;
 
     @Column(nullable = false, length = 150)
-    private String Content;
+    private String content;
 
-    private LocalDate dareCreated;
+    @CreationTimestamp
+    private LocalDateTime dareCreated;
+
+    public Comment(String commentatorName, String content){
+        this.content = content;
+        this.commentatorName = commentatorName;
+    }
+
 }

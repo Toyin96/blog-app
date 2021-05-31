@@ -6,6 +6,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -29,12 +31,19 @@ public class Post {
     @JoinColumn()
     private Author author;
 
-    @CreationTimestamp // database automatically stamps when the post was created
+    @CreationTimestamp // database automatically stamps when the PostService was created
     private LocalDate dateCreated;
 
-    @UpdateTimestamp // database automatically stamps when the post was updated
+    @UpdateTimestamp // database automatically stamps when the PostService was updated
     private LocalDate dateModified;
 
-    @OneToMany
-    private List<Comment> comment; //whenever the relationship you're extending to, it has to be in a list
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Comment> comments; //whenever the relationship you're extending to, it has to be in a list
+
+    public void addComment(Comment... comment){
+        if(this.comments == null){
+            this.comments = new ArrayList<>();
+        }
+        this.comments.addAll(Arrays.asList(comment));
+    }
 }
