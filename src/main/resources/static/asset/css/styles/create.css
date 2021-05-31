@@ -1,0 +1,24 @@
+@import "style.css";
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+}
+
+form h2{
+    line-height: 4;
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-family: var(--header-font);
+}
+
+@media only screen and (max-width: 1000px) {
+    form{
+        width: 80%;
+    }
+}

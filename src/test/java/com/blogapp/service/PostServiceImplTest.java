@@ -8,9 +8,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import static org.mockito.Mockito.*;
 import org.mockito.MockitoAnnotations;
-import web.PostDto;
-
-import static org.junit.jupiter.api.Assertions.*;
+import com.blogapp.web.dto.PostDto;
 
 class PostServiceImplTest {
 

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" th:href="@{/asset/css/styles/nav.css}">
+    <link rel="stylesheet" th:href="@{/asset/css/styles/footer.css}">
+    <link rel="stylesheet" th:href="@{/asset/css/media-query/footer.css}">
+    <link rel="stylesheet" th:href="@{/asset/css/media-query/nav.css}">
+    <link rel="stylesheet" th:href="@{/css/media-query/style.css}">
+    <link rel="stylesheet" th:href="@{/asset/css/styles/post.css}">
+    <link rel="stylesheet" th:href="@{/asset/css/media-query/post.css}">
+    <link rel="stylesheet" th:href="@{/asset/css/styles/create.css}">
+    <script src="https://kit.fontawesome.com/e2052a1ca7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+        <!-- Navigation   -->
+     <nav>
+        <div class="logo">
+            <a href="/index.html">
+                <h1>PentaBlog</h1>
+            </a>
+            <div class="toggle">
+                <button>
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <ul class="links">
+            <li><a href="/index.html">home</a></li>
+            <li><a href="create.html">post</a></li>
+            <li><a href="../static/asset/pages/register.html">register</a></li>
+        </ul>
+    </nav>
+    <!-- Navigation end   -->
+
+
+     <!--Form-->
+     <form action="">
+        <h2>create a blog post</h2>
+        <input type="file"id="avatar" name="avatar"
+       accept="image/png, image/jpeg">
+        <input type="text" name="text" id="text" placeholder="Title">
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="Post content here..."></textarea>
+        <input type="submit" value="post your comment">
+    </form> 
+<!-- Form
+  
+        <Footer -->
+        <footer>
+            <div class="footer-flex">
+                <div class="footer-item studio">
+                    <h3>PentaBlog Studio</h3>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut
+                        labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                    <p>Copyright © 2021 Your Company - Design: Whalewalker </p>
+                </div>
+                <div class="footer-item">
+                    <h3>Talk to us</h3>
+                    <p> 312 Delicious Street, San Francisco, CA 10880</p>
+                    <p>09075617573</p>
+                    <p>ohida@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="media">
+                <button>
+                    <a href="#" class="fa fa-facebook"></a>
+                </button>
+                <button><a href="#" class="fa fa-twitter"></a></button>
+                <button>
+                    <a href="#" class="fa fa-google-plus"></a>
+                </button>
+                <button><a href="#" class="fa fa-dribbble"></a></button>
+                <button><a href="#" class="fa fa-linkedin"></a></button>
+            </div>
+        </footer>
+        <!-- Footer -->
+
+
+    <!-- Navigation   -->
+    
+
+    <!-- Scripts -->
+    <script src="../static/asset/scripts/app.js"></script>
+</body>
+
+</html>

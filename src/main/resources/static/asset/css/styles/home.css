@@ -1,0 +1,58 @@
+@import "style.css";
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+header h1{
+    line-height: 2;
+    color: white;
+    font-size: 2.5rem;
+    font-family: var(--header-font);
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+header p{
+    color: #bfba55;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: var(--text-font);
+    letter-spacing: 3px;
+}
+
+header .flag{
+    display: flex;
+    align-items: center;
+}
+
+.flag *{
+    margin-right: 1rem;
+}
+
+.flag img{
+    width: 100px;
+}
+
+header button{
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    border: 2px solid white;
+    color: #cfc72d;
+    margin-top: 2.2rem;
+    font-weight: 400;
+    background: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+header button:hover{
+    transition: all 0.4s ease-in-out;
+    background: transparent;
+}
+

@@ -1,0 +1,45 @@
+@import "style.css";
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem 0;
+    background: white;
+    width: 100%;
+    position: fixed;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.5);
+}
+
+nav h1{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-family: var(--header-font);
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #555;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+}
+
+.links li a{
+    margin-right: 2rem;
+    color: black;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+
+}
+
+.links li a:hover{
+    transition: all 0.4s ease-in-out;
+    color: #bfba55;
+}
+
+.toggle{
+    display: none;
+}
+
+

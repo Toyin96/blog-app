@@ -93,6 +93,9 @@ class PostRepositoryTest {
 
         postRepository.save(blogPost);
         log.info("blogpost has been saved -->{}", blogPost);
+
+       Post post =  postRepository.findByTitle(blogPost.getTitle());
+        assertThat(post.getTitle()).isNotNull();
     }
 
     @Test

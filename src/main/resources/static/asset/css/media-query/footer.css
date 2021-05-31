@@ -1,0 +1,29 @@
+@media only screen and (max-width: 1000px) {
+  footer h3 {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+
+  .footer-flex div {
+    margin: 0;
+  }
+
+  .footer-flex .studio {
+    width: 100%;
+    margin-right: 4rem;
+  }
+}
+
+@media only screen and (max-width: 700px){
+    .footer-flex{
+        flex-direction: column;
+    }
+
+    .footer-flex .studio{
+        margin-bottom: 3rem;
+    }
+}

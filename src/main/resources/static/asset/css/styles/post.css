@@ -1,0 +1,106 @@
+@import "style.css";
+
+.post-header{
+    min-height: 70vh;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/asset/images/blog-image1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.post-header h1{
+    font-size: 3rem;
+    letter-spacing: 4px;
+    font-weight: 700;
+    color: white;
+    font-family: var(--header-font);
+    text-align: center;
+}
+
+.post-content p{
+    margin-bottom: 2rem;
+}
+
+.blog-post-container{
+    background: transparent;
+}
+
+footer{
+    width: 100%;
+}
+
+
+.blog-post-container .diff{
+    width: 100%;
+    margin: 3rem 0 0rem;
+}
+
+.comment-container h2{
+    font-size: 1.5rem;
+    font-family: var(--header-font);
+    line-height: 5;
+}
+
+.commentator{
+    display: flex;
+    font-family: var(--text-font);
+}
+
+.commentator img{
+    margin-right: 2rem;
+    object-fit: contain;
+}
+
+.commentator .name, .comment-date{
+    display: inline-block;
+    
+}
+
+.comment-date{
+    margin-left: 1rem;
+}
+
+.commentator .content{
+    line-height: 1.5;
+    margin-top: 0.5rem;
+}
+
+.comments .commentator{
+    margin-bottom: 3rem;
+}
+
+
+form input:not(input[type="submit"]), textarea{
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.8rem 0.5rem;
+    border-radius: 3px;
+    border: 1px solid rgb(196, 192, 192);
+}
+
+
+
+input[type="submit"]{
+    display: block;
+    margin-top: 1.54rem;
+    padding: 1rem 1.5rem;
+    background-color: transparent;
+    border-radius: 25px;
+    text-transform: capitalize;
+    background-color: #bfba55;
+    border: none;
+    color: white;
+    font-family: var(--text-font);
+}
+
+
+input[type="submit"]:hover{
+    background-color: black;
+    transition: all 0.4s ease-in-out;
+}
+
+

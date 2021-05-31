@@ -1,0 +1,78 @@
+@import "style.css";
+
+footer{
+    background-color: #000;
+    display: grid;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+    place-content: center;
+    min-height: 40vh;
+    font-family: var(--text-font);
+    padding: 2rem 0;
+}
+
+footer h3{
+    color: white;
+    font-size: 1.5rem;
+    line-height: 2;
+    font-family: var(--header-font);
+}
+
+footer p{
+    color: rgb(177, 177, 177);
+}
+
+.footer-flex{
+    display: flex;
+    margin: auto;
+    width: 80%;
+
+}
+
+.footer-flex div{
+    margin-right: 5rem;
+}
+
+.footer-flex .studio{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.footer-flex p{
+    line-height: 2;
+}
+
+.media{
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.media button{
+    margin-right: 1rem;
+    border: 2px solid #777;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.media button a{
+    color: #777;
+    transition: all 0.4s ease-in-out;
+
+}
+
+.media button:hover{
+    border-color: #bfba55;
+    transition: all 0.4s ease-in-out;
+    transform: scale(1.1);
+}
+
+.media button:hover a {
+    color: #bfba55;
+    transform: scale(1.1);
+}
+

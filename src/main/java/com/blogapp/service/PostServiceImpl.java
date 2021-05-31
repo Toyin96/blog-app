@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import web.PostDto;
+import com.blogapp.web.dto.PostDto;
 
 import java.util.List;
 

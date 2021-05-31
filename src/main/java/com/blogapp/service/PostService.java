@@ -2,7 +2,7 @@ package com.blogapp.service;
 
 import com.blogapp.data.models.Comment;
 import com.blogapp.data.models.Post;
-import web.PostDto;
+import com.blogapp.web.dto.PostDto;
 
 import java.util.List;
 
