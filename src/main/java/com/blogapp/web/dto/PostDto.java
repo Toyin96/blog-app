@@ -12,5 +12,5 @@ public class PostDto {
     @NotNull(message = "Post content cannot be null")
     private String content;
 
-    private MultipartFile coverImageUrl;
+    private MultipartFile imageFile;
 }
