@@ -1,5 +1,7 @@
 package com.blogapp.service.cloud;
 
+import com.blogapp.web.dto.PostDto;
+import com.blogapp.web.exception.PostObjectNullException;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,7 +29,7 @@ class CloudinaryCloudStorageImplTest {
     }
 
     @Test
-    void uploadImage(){
+    void uploadImageFile(){
         File file = new File("C:\\Users\\ADMIN\\Downloads\\blogapp\\blogapp\\src\\main\\resources\\static\\asset\\images\\author-image1.jpg");
 
         assertThat(file.exists()).isTrue();
@@ -41,6 +43,5 @@ class CloudinaryCloudStorageImplTest {
         }catch(IOException e){
             log.info("Error occurred --> {}", e.getMessage());
         }
-
     }
 }

@@ -3,12 +3,13 @@ package com.blogapp.service;
 import com.blogapp.data.models.Comment;
 import com.blogapp.data.models.Post;
 import com.blogapp.web.dto.PostDto;
+import com.blogapp.web.exception.PostObjectNullException;
 
 import java.util.List;
 
 public interface PostService {
 
-    Post savePost(PostDto postDto);
+    Post savePost(PostDto postDto) throws PostObjectNullException;
 
     List<Post> findAllPosts();
 

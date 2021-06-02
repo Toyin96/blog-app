@@ -2,6 +2,7 @@ package com.blogapp.web.controllers;
 
 import com.blogapp.service.PostService;
 import com.blogapp.web.dto.PostDto;
+import com.blogapp.web.exception.PostObjectNullException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +30,7 @@ public class PostController {
         /*
         We're passing a model to this page due to the http method which is a getmapping
          */
-        model.addAttribute("post", new PostDto());
+        model.addAttribute("postdto", new PostDto());
         /*
         Now, we're creating and passing a post dto to the model so that it returns the postdto
          */
@@ -42,7 +43,14 @@ public class PostController {
             the @ModelAttribute is used during MVC
          */
         log.info("Post dto received -->{}", postDto);
-        return "index";
+
+        try{
+            postServiceImpl.savePost(postDto);
+        }catch (PostObjectNullException pe){
+            log.info("Exception occurred -->{}", pe.getMessage());
+        }
+
+        return "redirect:/posts";
     }
 
 

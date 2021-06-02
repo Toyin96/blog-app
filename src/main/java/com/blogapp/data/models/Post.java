@@ -19,7 +19,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // we set the id ourselves
     private Integer id; // any class that has the entity annotation  must have an id.
 
-    @Column(nullable = false, length = 50, unique = true) // nullable set to true means it can't be null
+    @Column(nullable = false, length = 50, unique = true) // nullable set to false means it can't be null
     private String title;
 
     @Column(length = 400) // the default length is 250

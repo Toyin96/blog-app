@@ -1,0 +1,59 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:fragment="topnav">
+  <div class="logo">
+    <a href="/index.html">
+      <h1>Pent blog</h1>
+    </a>
+    <div class="toggle">
+      <a href="">
+
+      </a>
+      <button>
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+
+  <ul class="links">
+    <li><a th:href="@{/posts}">Home</a></li>
+    <li><a th:href="@{/posts/create}">Create post</a></li>
+  </ul>
+</nav>
+</body>
+
+<footer th:fragment="footer">
+  <div class="footer-flex">
+    <div class="footer-item studio">
+      <h3>PentaBlog Studio</h3>
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+        labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+      <p>Copyright © 2021 Your Company - Design: Whalewalker </p>
+    </div>
+    <div class="footer-item">
+      <h3>Talk to us</h3>
+      <p> 312 Delicious Street, San Francisco, CA 10880</p>
+      <p>09075617573</p>
+      <p>ohida@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="media">
+    <button>
+      <a href="#" class="fa fa-facebook"></a>
+    </button>
+    <button><a href="#" class="fa fa-twitter"></a></button>
+    <button>
+      <a href="#" class="fa fa-google-plus"></a>
+    </button>
+    <button><a href="#" class="fa fa-dribbble"></a></button>
+    <button><a href="#" class="fa fa-linkedin"></a></button>
+  </div>
+</footer>
+
+</html>

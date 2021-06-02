@@ -15,39 +15,23 @@
     <link rel="stylesheet" th:href="@{/asset/css/styles/post.css}">
     <link rel="stylesheet" th:href="@{/asset/css/media-query/post.css}">
     <link rel="stylesheet" th:href="@{/asset/css/styles/create.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/e2052a1ca7.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
         <!-- Navigation   -->
-     <nav>
-        <div class="logo">
-            <a href="/index.html">
-                <h1>PentaBlog</h1>
-            </a>
-            <div class="toggle">
-                <button>
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-
-        <ul class="links">
-            <li><a href="/posts/">home</a></li>
-            <li><a href="posts/create/">post</a></li>
-            <li><a href="../static/asset/pages/register.html">register</a></li>
-        </ul>
-    </nav>
+        <nav th:insert="/fragments.html :: topnav"></nav>
     <!-- Navigation end   -->
 
 
      <!--Form-->
-     <form th:action="@{/posts/save}" method="post" th:object="${post}" enctype="multipart/form-data">
+     <form th:action="@{/posts/save}" method="post" th:object="${postdto}" enctype="multipart/form-data">
         <h2>create a blog post</h2>
          <div class="mb-3">
              <label for="formFile" class="form-label">Cover Image</label>
-             <input class="form-control" th:fields="*{imageFile}" type="file" id="formFile">
+             <input class="form-control" th:field="*{imageFile}" type="file" id="formFile">
          </div>
 
         <input type="text" name="text" th:field="*{title}" id="text" placeholder="Title">
@@ -58,35 +42,7 @@
 <!-- Form
   
         <Footer -->
-        <footer>
-            <div class="footer-flex">
-                <div class="footer-item studio">
-                    <h3>PentaBlog Studio</h3>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                        ut
-                        labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                    <p>Copyright © 2021 Your Company - Design: Whalewalker </p>
-                </div>
-                <div class="footer-item">
-                    <h3>Talk to us</h3>
-                    <p> 312 Delicious Street, San Francisco, CA 10880</p>
-                    <p>09075617573</p>
-                    <p>ohida@gmail.com</p>
-                </div>
-            </div>
-
-            <div class="media">
-                <button>
-                    <a href="#" class="fa fa-facebook"></a>
-                </button>
-                <button><a href="#" class="fa fa-twitter"></a></button>
-                <button>
-                    <a href="#" class="fa fa-google-plus"></a>
-                </button>
-                <button><a href="#" class="fa fa-dribbble"></a></button>
-                <button><a href="#" class="fa fa-linkedin"></a></button>
-            </div>
-        </footer>
+        <footer th:insert="/fragments.html :: footer"></footer>
         <!-- Footer -->
 
 
@@ -94,7 +50,7 @@
     
 
     <!-- Scripts -->
-    <script src="../static/asset/scripts/app.js"></script>
+    <script src="/asset/scripts/app.js"></script>
 </body>
 
 </html>
