@@ -26,7 +26,7 @@ public class PostController {
 
     @GetMapping()
     public String getIndex(Model model){
-        List<Post> postList = postServiceImpl.findAllPosts();
+        List<Post> postList = postServiceImpl.findPostsInDescOrder();
         model.addAttribute("postList", postList);
 
         return "index"; //Spring boot will look for an html page that matches this name in template folder
@@ -54,7 +54,7 @@ public class PostController {
         log.info("Post dto received -->{}", postDto);
 
         if (result.hasErrors()){
-
+            return "create";
         }
 
         try{

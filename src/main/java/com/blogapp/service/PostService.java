@@ -20,4 +20,6 @@ public interface PostService {
     void deletePostById(Integer id);
 
     Post addCommentToPost(Integer id, Comment comment);
+
+    List<Post> findPostsInDescOrder();
 }

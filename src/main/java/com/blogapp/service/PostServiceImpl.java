@@ -90,4 +90,9 @@ public class PostServiceImpl implements PostService{
     public Post addCommentToPost(Integer id, Comment comment) {
         return null;
     }
+
+    @Override
+    public List<Post> findPostsInDescOrder() {
+        return postRepository.findByOrderByDateCreatedDesc();
+    }
 }

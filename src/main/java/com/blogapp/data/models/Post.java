@@ -6,6 +6,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -32,10 +33,10 @@ public class Post {
     private Author author;
 
     @CreationTimestamp // database automatically stamps when the PostService was created
-    private LocalDate dateCreated;
+    private LocalDateTime dateCreated;
 
     @UpdateTimestamp // database automatically stamps when the PostService was updated
-    private LocalDate dateModified;
+    private LocalDateTime dateModified;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Comment> comments; //whenever the relationship you're extending to, it has to be in a list

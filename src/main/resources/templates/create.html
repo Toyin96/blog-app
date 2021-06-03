@@ -38,8 +38,10 @@
              <input class="form-control" th:field="*{imageFile}" type="file" id="formFile">
          </div>
 
+         <span class="align-left alert alert-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
         <input type="text" name="text" th:field="*{title}" id="text" placeholder="Title">
 
+         <span class="align-left alert alert-danger" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span>
         <textarea name="message" id="message" th:field="*{content}" cols="30" rows="10" placeholder="Post content here..."></textarea>
         <input type="submit" value="post your comment">
     </form> 

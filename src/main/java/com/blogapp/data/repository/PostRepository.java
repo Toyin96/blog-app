@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /*Our repo has to be an interface that extends jpa repository. Note, we have to
 pass the entity and the id type. this way hibernate can generate sql
 scripts for whatever CRUD operation we wanna perform
@@ -18,5 +20,6 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
 
     @Query("select p from Post as p  where p.title = ?1")
     Post FindByPostTitle(@Param("tile")String title);
+    List<Post> findByOrderByDateCreatedDesc();
 
 }
