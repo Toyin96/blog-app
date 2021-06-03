@@ -177,4 +177,6 @@ class PostRepositoryTest {
 
         assertThat(oldPost.getComments()).hasSize(2);
     }
+
 }
+

@@ -9,6 +9,7 @@ import com.cloudinary.utils.ObjectUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import com.blogapp.web.dto.PostDto;
 
@@ -36,7 +37,7 @@ public class PostServiceImpl implements PostService{
 
         Post post = new Post();
 
-        if (postDto.getImageFile() != null) {
+        if (postDto.getImageFile() != null && !postDto.getImageFile().isEmpty()) {
 //            Map<Object, Object> params = new HashMap<>();
 //            params.put("public_id", "blogapp/" + postDto.getImageFile().getName());
 //            params.put("overwrite", true);
@@ -57,12 +58,17 @@ public class PostServiceImpl implements PostService{
         post.setContent(postDto.getContent());
 
         log.info("Post object before saving -->{}", post);
-        return postRepository.save(post);
+        try {
+            return postRepository.save(post);
+        }catch (DataIntegrityViolationException ex){
+            log.info("Exception occurred -->{}", ex.getMessage());
+            throw ex;
+        }
     }
 
     @Override
     public List<Post> findAllPosts() {
-        return null;
+        return postRepository.findAll();
     }
 
     @Override

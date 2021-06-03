@@ -11,6 +11,9 @@ import static org.mockito.Mockito.*;
 import org.mockito.MockitoAnnotations;
 import com.blogapp.web.dto.PostDto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class PostServiceImplTest {
 
     @Mock // we're injecting a mock of the postrepository into the postrepositorytest
@@ -32,5 +35,14 @@ class PostServiceImplTest {
         postServiceImpl.savePost(new PostDto());
 
         verify(postRepository, times(1)).save(testPost);
+    }
+
+    @Test
+    void whenTheFindAllMethodIsCalled_thenReturnListOfPost(){
+        List<Post> postList = new ArrayList<>();
+        when(postServiceImpl.findAllPosts()).thenReturn(postList);
+        postServiceImpl.findAllPosts();
+
+        verify(postRepository, times(1)).findAll();
     }
 }

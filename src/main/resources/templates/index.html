@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>PentaBlog</title>
+    <title>PentaxBlog</title>
     <link rel="stylesheet" th:href="@{asset/css/styles/style.css}">
     <link rel="stylesheet" th:href="@{asset/css/styles/nav.css}">
     <link rel="stylesheet" th:href="@{asset/css/styles/footer.css}">
@@ -39,18 +39,18 @@
 
     <!--    Blog post-->
     <div id="blog" class="blog-post-container">
-        <div class="blog-post">
+        <div class="blog-post" th:each="post : ${postList}">
             <a href="./asset/pages/post.html" class="img-container">
-                <img src="asset/images/blog-image1.jpg" alt="blog-img">
+                <img th:src="${post.coverImageUrl}" alt="blog-img">
             </a>
-            <a href="./asset/pages/post.html" class="post-title">We Help You Create Perfect Modern Design</a>
+            <a href="./asset/pages/post.html" class="post-title" th:text="${post.title}"></a>
             <div class="blog-post-detail">
                 <a class="user-detail">
                     <img src="asset/images/author-image1.jpg" class="user-profile">
                     <a href="" class="user-name">Jen Lopez</a>
                 </a>
 
-                <p class="date-published"> July 22, 2017</p>
+                <p class="date-published" th:text="${post.dateCreated}"></p>
 
                 <a href="" class="actions">
                     <p><i class="far fa-comment"></i></p>
@@ -58,10 +58,7 @@
                 </a>
             </div>
             <div class="post-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur.</p>
+                <p th:text="${post.content}"></p>
             </div>
             <a href="/asset/pages/post.html">
                 <button class="view-post">
@@ -69,131 +66,8 @@
                 </button>
             </a>
         </div>
+
         <div class="diff"></div>
-        <div class="blog-post">
-            <a href="./asset/pages/post.html" class="img-container">
-                <img src="asset/images/blog-image1.jpg" alt="blog-img">
-            </a>
-            <a href="./asset/pages/post.html" class="post-title">We Help You Create Perfect Modern Design</a>
-            <div class="blog-post-detail">
-                <a class="user-detail">
-                    <img src="asset/images/author-image1.jpg" class="user-profile">
-                    <a href="" class="user-name">Jen Lopez</a>
-                </a>
-
-                <p class="date-published"> July 22, 2017</p>
-
-                <a href="" class="actions">
-                    <p><i class="far fa-comment"></i></p>
-                    <p><span class="comment-count">35</span> Comments</p>
-                </a>
-            </div>
-            <div class="post-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur.</p>
-            </div>
-            <a href="/asset/pages/post.html">
-                <button class="view-post">
-                    continue reading
-                </button>
-            </a>
-        </div>
-        <div class="diff"></div>
-        <div class="blog-post">
-            <a href="./asset/pages/post.html" class="img-container">
-                <img src="asset/images/blog-image1.jpg" alt="blog-img">
-            </a>
-            <a href="./asset/pages/post.html" class="post-title">We Help You Create Perfect Modern Design</a>
-            <div class="blog-post-detail">
-                <a class="user-detail">
-                    <img src="asset/images/author-image1.jpg" class="user-profile">
-                    <a href="" class="user-name">Jen Lopez</a>
-                </a>
-
-                <p class="date-published"> July 22, 2017</p>
-
-                <a href="" class="actions">
-                    <p><i class="far fa-comment"></i></p>
-                    <p><span class="comment-count">35</span> Comments</p>
-                </a>
-            </div>
-            <div class="post-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur.</p>
-            </div>
-            <a href="/asset/pages/post.html">
-                <button class="view-post">
-                    continue reading
-                </button>
-            </a>
-        </div>
-        <diiv class="diff"></diiv>
-        <div class="blog-post">
-            <a href="./asset/pages/post.html" class="img-container">
-                <img src="asset/images/blog-image1.jpg" alt="blog-img">
-            </a>
-            <a href="./asset/pages/post.html" class="post-title">We Help You Create Perfect Modern Design</a>
-            <div class="blog-post-detail">
-                <a class="user-detail">
-                    <img src="asset/images/author-image1.jpg" class="user-profile">
-                    <a href="" class="user-name">Jen Lopez</a>
-                </a>
-
-                <p class="date-published"> July 22, 2017</p>
-
-                <a href="" class="actions">
-                    <p><i class="far fa-comment"></i></p>
-                    <p><span class="comment-count">35</span> Comments</p>
-                </a>
-            </div>
-            <div class="post-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur.</p>
-            </div>
-            <a href="/asset/pages/post.html">
-                <button class="view-post">
-                    continue reading
-                </button>
-            </a>
-        </div>
-        <div class="diff"></div>
-        <div class="blog-post">
-            <a href="./asset/pages/post.html" class="img-container">
-                <img src="asset/images/blog-image1.jpg" alt="blog-img">
-            </a>
-            <a href="./asset/pages/post.html" class="post-title">We Help You Create Perfect Modern Design</a>
-            <div class="blog-post-detail">
-                <a class="user-detail">
-                    <img src="asset/images/author-image1.jpg" class="user-profile">
-                    <a href="" class="user-name">Jen Lopez</a>
-                </a>
-
-                <p class="date-published"> July 22, 2017</p>
-
-                <a href="" class="actions">
-                    <p><i class="far fa-comment"></i></p>
-                    <p><span class="comment-count">35</span> Comments</p>
-                </a>
-            </div>
-            <div class="post-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur.</p>
-            </div>
-            <a href="/asset/pages/post.html">
-                <button class="view-post">
-                    continue reading
-                </button>
-            </a>
-
-        </div>
 
     </div>
     <!--   Blog post end-->

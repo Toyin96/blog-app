@@ -22,7 +22,7 @@ public class Post {
     @Column(nullable = false, length = 50, unique = true) // nullable set to false means it can't be null
     private String title;
 
-    @Column(length = 400) // the default length is 250
+    @Column(length = 5000) // the default length is 250
     private String content;
 
     private String coverImageUrl;
