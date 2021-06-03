@@ -60,7 +60,8 @@ class CloudinaryCloudStorageImplTest {
         Path path = Paths.get("C:\\Users\\ADMIN\\Downloads\\blogapp\\blogapp\\src\\main\\resources\\static\\asset\\images\\author-image1.jpg");
         assertThat(path.toFile()).exists();
 
-        MultipartFile multipartFile = new MockMultipartFile("images.jpeg", "images.jpeg", "img/jpeg", Files.readAllBytes(path));
+        MultipartFile multipartFile = new MockMultipartFile("images.jpeg",
+                "images.jpeg", "img/jpeg", Files.readAllBytes(path));
 
         log.info("multipart object created --> {}", multipartFile);
         assertThat(multipartFile).isNotNull();

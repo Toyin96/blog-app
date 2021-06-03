@@ -4,6 +4,7 @@ import com.blogapp.data.models.Comment;
 import com.blogapp.data.models.Post;
 import com.blogapp.data.repository.PostRepository;
 import com.blogapp.service.cloud.CloudStorageService;
+import com.blogapp.web.exception.PostDoesNotExistException;
 import com.blogapp.web.exception.PostObjectNullException;
 import com.cloudinary.utils.ObjectUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -14,9 +15,7 @@ import org.springframework.stereotype.Service;
 import com.blogapp.web.dto.PostDto;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 @Service
@@ -45,7 +44,7 @@ public class PostServiceImpl implements PostService{
 
             try {
                 Map<?, ?> uploadResult = cloudStorageService.uploadImage(postDto.getImageFile(), ObjectUtils.asMap("public_id",
-                        "blogapp/" + postDto.getImageFile().getName(), "overwrite", true));
+                        "blogapp/" + extractFileName(Objects.requireNonNull(postDto.getImageFile().getOriginalFilename()))));
 
                 post.setCoverImageUrl(String.valueOf(uploadResult.get("url")));
                 log.info("Image url --> {}", uploadResult.get("url"));
@@ -77,8 +76,19 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
-    public Post findPostById(Integer id) {
-        return null;
+    public Post findPostById(Integer id) throws PostDoesNotExistException{
+
+       if (id == null) {
+           throw new NullPointerException("Post Id cannot be null");
+       }
+
+       Optional<Post> post = postRepository.findById(id);
+
+       if (post.isPresent()) {
+           return post.get();
+       } else {
+           throw new PostDoesNotExistException("Post with Id --> {}");
+       }
     }
 
     @Override
@@ -94,5 +104,9 @@ public class PostServiceImpl implements PostService{
     @Override
     public List<Post> findPostsInDescOrder() {
         return postRepository.findByOrderByDateCreatedDesc();
+    }
+
+    private String extractFileName(String fileName){
+        return fileName.split("\\.")[0];
     }
 }
