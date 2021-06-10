@@ -46,4 +46,4 @@ class PostServiceImplTest {
         verify(postRepository, times(1)).findAll();
     }
 
-}
+}   
