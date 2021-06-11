@@ -102,25 +102,23 @@ class PostRepositoryTest {
     void findAllPostInTheDbTest(){
         List<Post> existingPosts = postRepository.findAll();
         assertThat(existingPosts).isNotNull();
-        assertThat(existingPosts).hasSize(5);
-
-
+        assertThat(existingPosts).hasSize(4);
     }
 
-    @Test
-    @Transactional //keeps the transaction open for as many operations that we wanna perform. by default, it rolls back to previous state before transaction.
-    @Rollback(value = false) // now we are saying that the database should not roll back after the transaction has been performed
-    void deletePostByIdTest(){
-        Post savedPost = postRepository.findById(41).orElse(null);
-        assertThat(savedPost).isNotNull();
-        log.info("Post fetched from the database -->{}", savedPost);
-        //delete PostService
-        postRepository.deleteById(savedPost.getId());
-
-        savedPost = postRepository.findById(savedPost.getId()).orElse(null);
-        assertThat(savedPost).isNull();
-        log.info("Post fetched from the database -->{}", savedPost);
-    }
+//    @Test
+//    @Transactional //keeps the transaction open for as many operations that we wanna perform. by default, it rolls back to previous state before transaction.
+////    @Rollback(value = false) // now we are saying that the database should not roll back after the transaction has been performed
+//    void deletePostByIdTest(){
+//        Post savedPost = postRepository.findById(41).orElse(null);
+//        assertThat(savedPost).isNotNull();
+//        log.info("Post fetched from the database -->{}", savedPost);
+//        //delete PostService
+//        postRepository.deleteById(41);
+//
+//        Post deletedPost = postRepository.findById(41).orElse(null);
+//        assertThat(deletedPost).isNull();
+//        log.info("Post fetched from the database -->{}", deletedPost);
+//    }
 
     @Test
     void updateSavedPostTest(){
